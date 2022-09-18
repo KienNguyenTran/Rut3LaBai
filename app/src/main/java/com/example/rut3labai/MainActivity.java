@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         rutbai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(darut==0)//lan dau hoac rut lai
+                if(darut==0)
                 {
                     darut=0;
                     sonut=0;
@@ -85,22 +85,19 @@ public class MainActivity extends AppCompatActivity {
                     labai3.setImageResource(R.drawable.b2fv);
                     cacladarut.clear();
                 }
-                darut++; //dem so lan rut
-                //tao ngau nhien
+                darut++; 
                 Random rd=new Random();
                 int x,y;
-                //tao ngau nhien bao vao ArrayList de xet xem co bi trung khong
                 while(true)
                 {
-                    x=rd.nextInt(4);//0->3 (b-a+1)+a;
-                    y=rd.nextInt(13)+1;//1->13
+                    x=rd.nextInt(4);
+                    y=rd.nextInt(13)+1;
                     if(cacladarut.contains(mangtenbai[x][y])==false)
                     {
                         cacladarut.add(mangtenbai[x][y]);
                         break;
                     }
                 }
-                //chi can y<11 lap tuc khong con la batay nua
                 if(y<11)
                     batay=false;
                 if(darut==1)
@@ -120,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
                     darut=0;
                     labai3.setImageResource(manghinhbai[x][y]);
                     chuoithongbao+=", Số nút là "+ kq;
-                    //rutbai.setEnabled(false);
                 }
                 thongbao.setText("Các lá đã rút là "+cacladarut.toString()
                         +chuoithongbao +", Ba con tây: "+batay);
